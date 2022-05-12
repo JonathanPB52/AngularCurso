@@ -1,0 +1,57 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container-sm">
+    <form class="container-sm">
+        <h2 style="text-align: center;">Agregar Heroe</h2>
+        <hr>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre: </span>
+            <input type="text" class="form-control" #nombre placeholder="Ingresa el Nombre" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Edad: </span>
+            <input type="number" class="form-control" #edad placeholder="Ingresa la Edad" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="d-grid gap-2">
+        <input class="btn btn-primary btn-lg" type="button" value="Agergar Heroe" (click)="AgregarHeroe(nombre.value, edad.valueAsNumber)">
+    </div>
+    </form>
+    
+</div>
+
+<br>
+<div class="container-sm">
+<br>
+<h1 style="text-align: center;">Listado heroes</h1>
+<div **ngIf="heroeBorrado !== ''">
+    <h3>Heroe borrado</h3>
+    <p>{{heroeBorrado}}</p>
+</div>
+<hr>
+
+<div class="container-sm">
+    <table class="table">
+        <tr scope="col">
+            <td scope="col">ID</td>
+            <td scope="col">Nombre</td>
+            <td scope="col">Edad</td>
+            <td style="float: right; margin-right: 10%;">Acciones</td>
+        </tr>
+        <tr *ngFor="let heroe of heroes" scope="row">
+            <td >{{cantidad}}</td>
+            <td scope="row">{{heroe.nombre}}</td>
+            <td scope="col">{{heroe.edad}}</td>
+            <td class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <input type="button" value="Editar" class="btn btn btn-link me-md-2"/>
+                <input type="button" value="Eliminar" (click)="borrar()" class="btn btn btn-link"/>
+            </td>
+            <!--<td scope="col">
+                <input type="button" class="btn btn-danger" value="Borrar registro" (click)="borrar()">
+            </td>-->
+        </tr>
+    </table>    
+</div>
+</div>
+

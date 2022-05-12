@@ -1,0 +1,16 @@
+<br>
+<br>
+<br>
+<br>
+<h1>Calculadora</h1>
+<input type="number" name="Num1" #Num1>
+<br>
+<input type="number" name="Num2" #Num2>
+<br>
+<hr>
+<button (click)="sumar(Num1.valueAsNumber, Num2.valueAsNumber);">Sumar</button>
+<button (click)="rsp = Num1.valueAsNumber-Num2.valueAsNumber">Restar</button>
+<button (click)="rsp = Num1.valueAsNumber*Num2.valueAsNumber">Multiplicar</button>
+<button (click)="rsp = Num1.valueAsNumber/Num2.valueAsNumber">Dividir</button>
+<br>
+<h1>{{rsp}}</h1>
